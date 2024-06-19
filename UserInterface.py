@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -104,26 +98,34 @@ def predict_image(model, image):
 
 # Streamlit app
 st.title("Hand Written Digit Recognition")
-st.write("Upload an image of a digit and get predictions from one of three models: MLP, SimpleCNN, or LeNet5.")
+st.write("Upload an image of a digit and get predictions from one of three models: MLP, SimpleCNN, or LeNet5, or all.")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["png", "jpg", "jpeg"])
 
 # Model selection dropdown menu
-model_name = st.selectbox("Select model for prediction:", ("MLP", "SimpleCNN", "LeNet5"))
+model_name = st.selectbox("Select model for prediction:", ("MLP", "SimpleCNN", "LeNet5", "All"))
 
 if uploaded_file is not None:
     image = Image.open(io.BytesIO(uploaded_file.read())).convert('L')
-    st.image(image, caption='Uploaded Image.', use_column_width=True)
+    resized_image = image.resize((150, 150))  # Resize the image for display
+    st.image(resized_image, caption='Uploaded Image.', use_column_width=False)
     st.write("")
     st.write("Classifying...")
 
     # Predict using the selected model
     if model_name == "MLP":
         prediction = predict_image(mlp_model, image)
+        st.write(f"MLP Prediction: {prediction}")
     elif model_name == "SimpleCNN":
         prediction = predict_image(cnn_model, image)
-    else:
+        st.write(f"SimpleCNN Prediction: {prediction}")
+    elif model_name == "LeNet5":
         prediction = predict_image(lenet_model, image)
-
-    st.write(f"{model_name} Prediction: {prediction}")
-
+        st.write(f"LeNet5 Prediction: {prediction}")
+    else:
+        mlp_prediction = predict_image(mlp_model, image)
+        cnn_prediction = predict_image(cnn_model, image)
+        lenet_prediction = predict_image(lenet_model, image)
+        st.write(f"MLP Prediction: {mlp_prediction}")
+        st.write(f"SimpleCNN Prediction: {cnn_prediction}")
+        st.write(f"LeNet5 Prediction: {lenet_prediction}")
