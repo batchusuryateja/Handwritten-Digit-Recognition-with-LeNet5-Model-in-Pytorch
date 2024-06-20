@@ -7,7 +7,7 @@ from PIL import Image
 import numpy as np
 import io
 
-# Define your model classes (MLP, SimpleCNN, LeNet5)
+# Defining model classes (MLP, SimpleCNN, LeNet5)
 class MLP(nn.Module):
     def __init__(self):
         super(MLP, self).__init__()
@@ -67,12 +67,11 @@ class LeNet5(nn.Module):
         x = self.fc3(x)
         return x
 
-# Instantiate and load the models
+# Instantiating and loading the models
 mlp_model = MLP()
 cnn_model = SimpleCNN()
 lenet_model = LeNet5()
 
-# Replace these paths with the correct paths to your saved model files
 mlp_model.load_state_dict(torch.load('MLP_model.pth', map_location=torch.device('cpu')))
 cnn_model.load_state_dict(torch.load('CNN_model.pth', map_location=torch.device('cpu')))
 lenet_model.load_state_dict(torch.load('LeNet5_model.pth', map_location=torch.device('cpu')))
@@ -81,7 +80,7 @@ mlp_model.eval()
 cnn_model.eval()
 lenet_model.eval()
 
-# Define the transformation to preprocess the image during inference
+# Defining the transformation to preprocess the image during inference
 transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=1),
     transforms.Resize((28, 28)),
@@ -112,7 +111,7 @@ if uploaded_file is not None:
     st.write("")
     st.write("Classifying...")
 
-    # Predict using the selected model
+    # Predicting using the selected model
     if model_name == "MLP":
         prediction = predict_image(mlp_model, image)
         st.write(f"MLP Prediction: {prediction}")
