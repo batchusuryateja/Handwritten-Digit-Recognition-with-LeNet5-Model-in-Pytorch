@@ -26,5 +26,5 @@ Image
 
 ## Building the MLP Model
 #### The Multilayer Perceptron (MLP) model is a fully connected neural network with an input layer, one or more hidden layers, and an output layer.
-![Load Data](https://www.researchgate.net/publication/265784353/figure/fig1/AS:669201052209156@1536561372912/Architecture-of-Multi-Layer-Perceptron-MLP.png)
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/MLP.png)
 
