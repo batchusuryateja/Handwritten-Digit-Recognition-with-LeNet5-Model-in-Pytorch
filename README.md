@@ -6,7 +6,7 @@
 ##### OpenCV
 ##### PIL
 ##### NumPy
-##### Pandas
+##### Pandas  ![Load Data]()
 
 ## Data Collection:
 
@@ -19,7 +19,7 @@
 
 ## Displaying 5 Random Images in the Dataset
 #### To get an overview of the dataset, we display 5 random images along with their corresponding labels.
-Image
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/Random.png)
 
 ## Preprocessing the Data
 #### Preprocessing involves normalizing the image data to the range [0, 1] by dividing by 255. Additionally, for the MLP model, we flatten the 28x28 images into 784-dimensional vectors.
@@ -36,3 +36,24 @@ Image
 #### LeNet-5 is a classic CNN architecture designed specifically for digit recognition. It consists of two sets of convolutional and pooling layers, followed by fully connected layers.
 ![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/lenet.jpeg)
 
+## Training the MLP Model
+#### The MLP model is trained using the training dataset. The number of epochs and batch size can be adjusted as needed.
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/T%20MLP.png)
+
+## Training the CNN Model
+#### The CNN model is trained similarly, but the input data must be reshaped to include the channel dimension.
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/T%20CNN.png)
+
+## Training the LeNet-5 Model
+#### The LeNet-5 model is trained with the same reshaped data.
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/T%20Re.png)
+
+## Testing Model Accuracy
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/Model%20Accuracy.png)
+
+## Prediction of MLP Model
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/P%20MLP.png)
+## Prediction of CNN Model
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/P%20CNN.png)
+## Prediction of LeNet-5 Model
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/P%20Net.png)
