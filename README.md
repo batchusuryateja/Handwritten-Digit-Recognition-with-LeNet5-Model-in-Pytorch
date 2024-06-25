@@ -1,7 +1,7 @@
-##### Handwritten Digit Recognition with Model in Pytorch
+# Handwritten Digit Recognition 
 
 
-Using Python Libraries:
-sklearn, opencv, PIL, numpy, pandas
+# Using Python Libraries:
+## sklearn, opencv, PIL, numpy, pandas
 
-with Open Source Datasets.
+
