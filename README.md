@@ -6,7 +6,7 @@
 ##### OpenCV
 ##### PIL
 ##### NumPy
-##### Pandas  ![Load Data]()
+##### Pandas  
 
 ## Data Collection:
 
