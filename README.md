@@ -15,6 +15,7 @@
 ## Loading MNIST Dataset:
 
 #### To load the MNIST dataset, we utilize the tensorflow.keras.datasets module, which provides a straightforward interface for fetching the dataset. The dataset is split into training and test sets.
-<a href="C:\Users\mughe\OneDrive\Pictures\Screenshots\Screenshot 2024-06-25 200809.png" target="blank"><img align="center"
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/raw/main/Images/Load%20Data.png)
+
 
 
