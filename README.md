@@ -28,3 +28,11 @@ Image
 #### The Multilayer Perceptron (MLP) model is a fully connected neural network with an input layer, one or more hidden layers, and an output layer.
 ![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/MLP.png)
 
+## Building the CNN Model
+#### The Convolutional Neural Network (CNN) model uses convolutional layers to capture spatial features of the images, followed by pooling layers and fully connected layers.
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/CNN.jpeg)
+
+## Building the LeNet-5 Model
+#### LeNet-5 is a classic CNN architecture designed specifically for digit recognition. It consists of two sets of convolutional and pooling layers, followed by fully connected layers.
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/lenet.jpeg)
+
