@@ -15,6 +15,16 @@
 ## Loading MNIST Dataset:
 
 #### To load the MNIST dataset, we utilize the tensorflow.keras.datasets module, which provides a straightforward interface for fetching the dataset. The dataset is split into training and test sets.
-<a href="C:\Users\mughe\OneDrive\Pictures\Screenshots\Screenshot 2024-06-25 200809.png" target="blank"><img align="center"
+![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/raw/main/Images/Load%20Data.png)
 
+## Displaying 5 Random Images in the Dataset
+#### To get an overview of the dataset, we display 5 random images along with their corresponding labels.
+Image
+
+## Preprocessing the Data
+#### Preprocessing involves normalizing the image data to the range [0, 1] by dividing by 255. Additionally, for the MLP model, we flatten the 28x28 images into 784-dimensional vectors.
+
+## Building the MLP Model
+#### The Multilayer Perceptron (MLP) model is a fully connected neural network with an input layer, one or more hidden layers, and an output layer.
+![Load Data](https://www.researchgate.net/publication/265784353/figure/fig1/AS:669201052209156@1536561372912/Architecture-of-Multi-Layer-Perceptron-MLP.png)
 
