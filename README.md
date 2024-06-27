@@ -47,7 +47,7 @@
 
 ## Training the LeNet-5 Model
 #### The LeNet-5 model is trained with the same reshaped data.
-![image](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/assets/171341053/6fa1d79a-aa3f-4102-ae3a-715a6a0b051b)
+![image](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/assets/171341053/f7da15af-ceca-4b99-86d2-8c2e1f9cd023)
 
 ## Testing Model Accuracy
 ![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/Model%20Accuracy.png)
