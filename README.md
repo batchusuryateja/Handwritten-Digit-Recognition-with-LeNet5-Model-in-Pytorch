@@ -34,7 +34,8 @@
 
 ## Building the LeNet-5 Model
 #### LeNet-5 is a classic CNN architecture designed specifically for digit recognition. It consists of two sets of convolutional and pooling layers, followed by fully connected layers.
-![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/lenet.jpeg)
+![image](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/assets/171341053/18df991a-3d11-4a3f-9ba2-9e489bdda00f)
+
 
 ## Training the MLP Model
 #### The MLP model is trained using the training dataset. The number of epochs and batch size can be adjusted as needed.
@@ -46,7 +47,7 @@
 
 ## Training the LeNet-5 Model
 #### The LeNet-5 model is trained with the same reshaped data.
-![Load Data](![image](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/assets/171341053/783b6a77-7c1d-4949-b778-6671bd837689)
+![image](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/assets/171341053/6fa1d79a-aa3f-4102-ae3a-715a6a0b051b)
 
 ## Testing Model Accuracy
 ![Load Data](https://github.com/batchusuryateja/Handwritten-Digit-Recognition-with-LeNet5-Model-in-Pytorch/blob/main/Images/Model%20Accuracy.png)
