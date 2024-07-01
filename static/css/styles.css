@@ -1,0 +1,175 @@
+/* This file is a css stylesheet for our project that defines the layout and visual styling of the html elements of our interface*/
+/*declare various attributes of the body element*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;                                                   /* Set the font family for the entire page */
+    font-weight: 400;
+    font-style: normal;
+    background-image: url('https://w0.peakpx.com/wallpaper/919/555/HD-wallpaper-blue-digits-background-artwork-numbers-digits-textures-blue-background-math-concepts.jpg'); /* Set the background image to a URL */
+    background-size: cover;                                                                                       /* Set the background size to cover the entire page */
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    margin: 0;
+    color: #fff;                                                                                                 /* Set the text color to white */
+}
+/* declare various attributes of the label box element */
+.label-box {
+    background-color: rgba(0, 0, 0, 0.7);                                                                         /* Set the background color to a dark gray with 70% opacity */                                   
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);                                                                     /* Add a box shadow to the label box */
+    text-align: center;
+}
+/* define the values of properties of the heading within the label box */
+.label-box h1 {
+    color: #fff;                                                                                                /* Set the text color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);                                                               /* Add a text shadow to the heading */
+    margin: 0;
+}
+/* define a container  element that displays its children in a flex layout */
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* declare the attributes of the upload and draw container in the middle of the index page */
+
+.upload-container, .draw-container {
+    background-color: rgb(252, 252, 254);                                                           /* Set the background color to a white with 90% opacity */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);                                                              /* Add a box shadow to the container */
+    width: 40%;
+    text-align: center;
+}
+
+/* define the colors of the heading  of upload and draw containers (black) */
+
+.upload-container h2, .draw-container h2 {
+    color: #010101;
+}
+/* define the attributes of the select drop dowm inside the upload file container*/
+.select-style {
+    margin-bottom: 20px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #02aec872;                                                                                /* Add a 1px solid border with a light gray color */
+    border-radius: 5px;
+}
+
+/* Define the styling for the select element inside the upload file container */
+.select-style select {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    appearance: none;                                                                              /* Remove the default appearance of the select element */
+    -webkit-appearance: none;                                                                      /* Remove the default appearance of the select element for WebKit browsers */
+    -moz-appearance: none;
+    color: #333;                                                                                   /* Set the text color to a dark gray  */
+}
+/* declare the attributes of file upload element inside the upload container */
+.file-upload {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    background-color: #000;                                                     /* Set the background color to black */
+    color: #fff;                                                                    /* Set the text color to white */
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;                                                              /* Change the cursor to a pointer on hover */
+}
+                                                                                   /* Hide the file input element */
+.file-upload input[type="file"] {
+    display: none;                                                                 /* Set the display to none to hide the element */
+}
+
+.file-upload span {
+    display: inline-block;
+    padding: 8px 20px;
+}
+/* define of the values of the properties of the upload,clear and predict buttons */
+.btn-upload, .btn-clear, .btn-predict {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #000;                                                     /* Set the background color to black */
+    color: #fff;                                                                   /* Set the text color to white */       
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;                                            /* Add a transition effect to the background color on hover */
+}
+ /* define the bg colors of upload, clear and predict buttons on hovering */
+.btn-upload:hover {
+    background-color: #ff4c4c;                                                  /* Change the background color to light red on hover */
+}
+.btn-clear:hover {
+    background-color: #4cff4c;                                                  /* Change the background color to light green on hover */
+}
+.btn-predict:hover {
+    background-color: #ff4c4c;                                                  /* Change the background color to light red on hover */
+}
+
+/* Styling the results page of our interface*/
+
+/* declare various attributes of the results container on the results page */
+.result-container {
+    background-color: #fff;                                                    /* Set the background color to white */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);                                   /* Add a box shadow to the container */
+    max-width: 800px;
+    margin: 0 auto;                                                           /* Center the container horizontally */
+}
+/* declare the attributes of result box */
+.result-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* declare the attributes of the results box's heading*/
+.result-box h2 {
+    color: #000000;                                                         /* Set the text color to a blue */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);                            /* Add a text shadow to the heading */
+    margin-bottom: 10px;
+}
+/* declare the attributes of the predicted output */
+.predicted-output {
+    color: #000;                                                            /* Set the text color to black */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+/* declare the attributes of the result box image */
+.result-box img {
+    border: 3px solid #2a5ca8;                                              /* Add a 3px solid border with a blue color  to the images */
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+/* declare the attributes of the go back button */
+.btn-go-back {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;                                                            /* Set the text color to white  */
+    text-decoration: none;
+    background-color: #000;                                              /* Set the background color of the button to black */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;                                     /* Add a transition effect to the background color to make it change smoothly on hover */
+}
+/* declare the attributes of the go back button on hovering */
+.btn-go-back:hover {
+    background-color: #ff4c4c;                                                /* Change the background color of the button to light red on hovering */
+    color: #fff;                                                           /* Keep the text color white on hover */
+}
