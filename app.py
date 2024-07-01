@@ -1,6 +1,6 @@
 # Import necessary modules from Flask
 from flask import Flask, request, render_template, redirect, url_for, flash
-
+ 
 # Import PIL for image processing
 from PIL import Image
 
