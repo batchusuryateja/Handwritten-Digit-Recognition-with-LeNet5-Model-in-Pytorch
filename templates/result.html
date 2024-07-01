@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <title>Prediction</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to the external CSS stylesheet -->
+</head>
+
+<body> 
+    <header class="label-box"> 
+        <h1>Prediction</h1> <!-- Main heading of the page -->
+    </header>
+
+    <div class="result-container">
+        <section class="result-box">
+            <h2>Predicted Digit</h2> <!-- Subheading for the prediction result -->
+            <div class="predicted-output">{{ prediction }}</div> <!-- Display the prediction result dynamically -->
+            {% if image_path %}
+                <img src="{{ image_path }}" alt="Uploaded Image"> <!-- Display the uploaded image if available -->
+            {% else %}
+                <p>No image available</p> <!-- Display a message if no image is available -->
+            {% endif %}
+        </section>
+        <a href="/" class="btn-go-back">Go back</a> <!-- Link to go back to the homepage -->
+    </div>
+</body>
+</html>
