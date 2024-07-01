@@ -7,7 +7,7 @@ from PIL import Image
 import numpy as np
 import io
 
-# Defining the MLP model class
+# Defining the MLP model class 
 class MLP(nn.Module):
     def __init__(self):
         super(MLP, self).__init__()
