@@ -1,195 +1,190 @@
+/* Basic styling for the whole body */
 body {
-    /* Set font, background image, and basic layout */
-    font-family: 'Arial', sans-serif;
-    background-image: url('https://w0.peakpx.com/wallpaper/919/555/HD-wallpaper-blue-digits-background-artwork-numbers-digits-textures-blue-background-math-concepts.jpg');
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} 
+    font-family: 'Arial', sans-serif; /* Set font */
+    background-image: url('https://w0.peakpx.com/wallpaper/919/555/HD-wallpaper-blue-digits-background-artwork-numbers-digits-textures-blue-background-math-concepts.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color: #fff; /* Text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items horizontally */
+}
 
+/* Styling for header box */
 .header-box {
-    /* Style header box */
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    margin: 20px 0;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 20px; /* Padding inside */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    width: 80%; /* 80% width of its container */
+    margin: 20px 0; /* Margin top and bottom */
 }
 
+/* Styling for main container */
 .main-container {
-    /* Style main container */
-    width: 90%;
-    max-width: 1200px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 90%; /* 90% width */
+    max-width: 1200px; /* Maximum width */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items horizontally */
 }
 
+/* Styling for input section */
 .input-section {
-    /* Style input section */
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 20px; /* Margin bottom */
+    text-align: center; /* Center align text */
 }
 
+/* Styling for buttons in input choice section */
 .input-choice button {
-    /* Style buttons for input choice */
-    margin: 0 10px;
-    padding: 10px 20px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin: 0 10px; /* Margin around buttons */
+    padding: 10px 20px; /* Padding inside buttons */
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
 }
 
 .input-choice button:hover {
-    /* Hover effect for input choice buttons */
-    background: #ff4c4c;
+    background: #ff4c4c; /* Hover background color */
 }
 
+/* Styling for hidden sections */
 .upload-section, .draw-section {
-    /* Style for hidden sections */
-    display: none;
-    width: 100%;
-    max-width: 600px;
-    background: black;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Maximum width */
+    background: black; /* Black background */
+    padding: 20px; /* Padding inside */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center align text */
 }
 
+/* Styling for section headers */
 .upload-section h2, .draw-section h2 {
-    /* Style section headers */
-    color: #fff;
+    color: #fff; /* White text */
 }
 
+/* Styling for dropdown container */
 .dropdown {
-    /* Style dropdown container */
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Margin bottom */
 }
 
+/* Styling for dropdown */
 .dropdown select {
-    /* Style dropdown */
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
+    padding: 10px; /* Padding inside */
+    width: 100%; /* Full width */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
 }
 
+/* Styling for file input container */
 .file-input {
-    /* Style file input container */
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
+    position: relative; /* Relative positioning */
+    overflow: hidden; /* Hide overflow */
+    display: inline-block; /* Display as inline block */
 }
 
+/* Hiding file input */
 .file-input input[type="file"] {
-    /* Hide file input */
-    display: none;
+    display: none; /* Hidden */
 }
 
+/* Styling for file input label */
 .file-input .file-label {
-    /* Style file input label */
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding inside */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    display: inline-block; /* Display as inline block */
 }
 
 .file-input .file-label:hover {
-    /* Hover effect for file input label */
-    background: #ff4c4c;
+    background: #ff4c4c; /* Hover background color */
 }
 
+/* Styling for submit button */
 .submit-btn {
-    /* Style submit button */
-    background: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 10px 20px; /* Padding inside */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Margin top */
 }
 
 .submit-btn:hover {
-    /* Hover effect for submit button */
-    background: #ff4c4c;
+    background: #ff4c4c; /* Hover background color */
 }
 
+/* Styling for canvas box */
 .canvas-box {
-    /* Style canvas box */
-    margin: 20px 0;
+    margin: 20px 0; /* Margin top and bottom */
 }
 
+/* Styling for canvas buttons */
 .canvas-buttons button {
-    /* Style canvas buttons */
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin: 10px; /* Margin around buttons */
+    padding: 10px 20px; /* Padding inside buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
 }
 
 .canvas-buttons button:hover {
-    /* Hover effect for canvas buttons */
-    background: #ff4c4c;
+    background: #ff4c4c; /* Hover background color */
 }
 
+/* Styling for main result section */
 .result-main {
-    /* Style main result section */
-    width: 90%;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    margin: 20px 0;
+    width: 90%; /* 90% width */
+    max-width: 800px; /* Maximum width */
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside */
+    text-align: center; /* Center align text */
+    margin: 20px 0; /* Margin top and bottom */
 }
 
+/* Styling for result header */
 .result-display h2 {
-    /* Style result header */
-    color: #000;
+    color: #000; /* Black text */
 }
 
+/* Styling for prediction text */
 .prediction {
-    /* Style prediction text */
-    font-size: 48px;
-    color: #000;
+    font-size: 48px; /* Large font size */
+    color: #000; /* Black text */
 }
 
+/* Styling for result image */
 .result-img {
-    /* Style result image */
-    border: 3px solid #000;
-    border-radius: 10px;
-    margin-top: 20px;
-    max-width: 100%;
+    border: 3px solid #000; /* Black border */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 20px; /* Margin top */
+    max-width: 100%; /* Maximum width */
 }
 
+/* Styling for back button */
 .back-btn {
-    /* Style back button */
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #000;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    display: inline-block; /* Display as inline block */
+    margin-top: 20px; /* Margin top */
+    padding: 10px 20px; /* Padding inside */
+    background: #000; /* Black background */
+    color: #fff; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth background transition */
 }
 
 .back-btn:hover {
-    /* Hover effect for back button */
-    background: #ff4c4c;
+    background: #ff4c4c; /* Hover background color */
 }
