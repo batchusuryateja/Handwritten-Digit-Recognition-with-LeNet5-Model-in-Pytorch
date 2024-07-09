@@ -1,103 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Handwritten Digit Recognition</title> <!-- Title of the webpage -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to an external stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-
 <body>
-    <div class="label-box">
-        <h1>Handwritten Digit Recognition</h1> <!-- Heading displaying the title of the webpage -->
-    </div>
+    <!-- Header section with title -->
+    <header class="header-box">
+        <h1>Handwritten Digit Recognition</h1>
+    </header>
 
-    <div class="container"> <!-- Main container for upload and draw sections -->
-        <div class="upload-container"> <!-- File upload section -->
-            <h2>Upload the image of the Digit</h2> <!-- Heading for file upload section -->
-            <form id="uploadForm" action="/" method="post" enctype="multipart/form-data"> <!-- Form for file upload -->
-                <div class="select-style"> <!-- Dropdown selection for model options -->
+    <main class="main-container">
+        <!-- Section for choosing input method -->
+        <section class="input-section">
+            <h2>Select Input Method</h2>
+            <div class="input-choice">
+                <!-- Buttons to choose between uploading an image or drawing a digit -->
+                <button id="uploadBtn">Upload Image</button>
+                <button id="drawBtn">Draw Digit</button>
+            </div>
+        </section>
+
+        <!-- Section for uploading an image -->
+        <section id="uploadSection" class="upload-section" style="display:none;">
+            <h2>Upload Image of Digit</h2>
+            <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+                <!-- Dropdown to select the model -->
+                <div class="dropdown">
+                    <label for="model_choice">Choose Model:</label>
                     <select name="model_choice" id="model_choice">
-                        <option value="lenet">LeNet-5 Model</option>
-                        <option value="cnn">CNN Model</option>
-                        <option value="mlp">MLP Model</option>
+                        <option value="lenet">LeNet-5</option>
+                        <option value="cnn">CNN</option>
+                        <option value="mlp">MLP</option>
                     </select>
                 </div>
-                <label class="file-upload"> <!-- Label for file upload input -->
-                    <input type="file" name="file" accept="image/*" onchange="updateFileName(this)"> <!-- File upload input field -->
-                    <span>Choose an image</span> <!-- Text for file selection -->
-                </label>
-                <button class="btn-upload" type="submit">Upload and Predict</button> <!-- Submit button for file upload -->
+                <!-- File input for uploading image -->
+                <div class="file-input">
+                    <label for="file" class="file-label">Choose an image</label>
+                    <input type="file" name="file" id="file" accept="image/*" onchange="displayFileName()">
+                </div>
+                <!-- Submit button to upload the image for prediction -->
+                <button type="submit" class="submit-btn">Predict</button>
             </form>
-            <p id="file-name-display"></p> <!-- Paragraph to display uploaded file name -->
-        </div>
-        
-        <div class="draw-container"> <!-- Drawing section -->
-            <h2>Draw the digit below</h2> <!-- Heading for drawing section -->
-            <div class="canvas-container"> <!-- Canvas drawing area -->
-                <canvas id="canvas" width="280" height="280" style="border: 1px solid #fff;"></canvas> <!-- Canvas element for drawing -->
-                <br>
-                <button class="btn-clear" type="button">Clear</button> <!-- Button to clear the drawing -->
-                <button class="btn-predict" type="button">Predict</button> <!-- Button to predict the drawn digit -->
+            <!-- Display selected file name -->
+            <p id="fileDisplay"></p>
+        </section>
+
+        <!-- Section for drawing a digit -->
+        <section id="drawSection" class="draw-section" style="display:none;">
+            <h2>Draw the Digit</h2>
+            <div class="canvas-box">
+                <!-- Canvas for drawing the digit -->
+                <canvas id="canvas" width="280" height="280"></canvas>
             </div>
-        </div>
-    </div>
-    
-    <form id="canvasForm" action="/predict_canvas" method="post"> <!-- Form for submitting canvas drawing data -->
-        <input type="hidden" name="canvasData" id="canvasData"> <!-- Hidden input field for storing canvas data -->
-        <input type="hidden" name="model_choice_canvas" id="model_choice_canvas"> <!-- Hidden input field for storing model choice -->
-    </form>
+            <div class="canvas-buttons">
+                <!-- Buttons to clear the canvas or predict the digit -->
+                <button id="clearCanvas">Clear</button>
+                <button id="predictDraw">Predict</button>
+            </div>
+            <form id="canvasForm" action="/predict_canvas" method="post">
+                <!-- Hidden input to store the canvas data -->
+                <input type="hidden" name="canvasData" id="canvasData">
+                <!-- Dropdown to select the model -->
+                <div class="dropdown">
+                    <label for="model_choice_canvas">Choose Model:</label>
+                    <select name="model_choice_canvas" id="model_choice_canvas">
+                        <option value="lenet">LeNet-5</option>
+                        <option value="cnn">CNN</option>
+                        <option value="mlp">MLP</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+    </main>
 
+    <!-- JavaScript for handling user interactions -->
     <script>
-        var canvas = document.getElementById('canvas'); // Get the canvas element
-        var ctx = canvas.getContext('2d'); // Get the 2D drawing context of the canvas
-        var drawing = false; // Variable to track drawing state
+        // JavaScript to handle the display of input sections
+        const uploadBtn = document.getElementById('uploadBtn');
+        const drawBtn = document.getElementById('drawBtn');
+        const uploadSection = document.getElementById('uploadSection');
+        const drawSection = document.getElementById('drawSection');
 
-        // Set initial canvas properties
-        ctx.fillStyle = "black";
+        // Event listener for upload button
+        uploadBtn.addEventListener('click', () => {
+            uploadSection.style.display = 'block'; // Show upload section
+            drawSection.style.display = 'none';   // Hide draw section
+        });
+
+        // Event listener for draw button
+        drawBtn.addEventListener('click', () => {
+            drawSection.style.display = 'block';   // Show draw section
+            uploadSection.style.display = 'none';  // Hide upload section
+        });
+
+        // Function to display the name of the selected file
+        function displayFileName() {
+            const fileInput = document.getElementById('file');
+            const fileName = fileInput.files[0].name;
+            document.getElementById('fileDisplay').textContent = "Selected file: " + fileName;
+        }
+
+        // JavaScript to handle drawing on the canvas
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        // Initialize canvas background to black
+        ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = "white";
+        // Set stroke style to white and line width
+        ctx.strokeStyle = 'white';
         ctx.lineWidth = 10;
 
-        // Event listener for mouse down to start drawing
-        canvas.addEventListener('mousedown', function(e) {
-            drawing = true;
+        // Event listeners for drawing on the canvas
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
             ctx.beginPath();
             ctx.moveTo(e.offsetX, e.offsetY);
         });
 
-        // Event listener for mouse move to draw lines
-        canvas.addEventListener('mousemove', function(e) {
-            if (drawing) {
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDrawing) {
                 ctx.lineTo(e.offsetX, e.offsetY);
                 ctx.stroke();
             }
         });
 
-        // Event listener for mouse up to stop drawing
-        canvas.addEventListener('mouseup', function() {
-            drawing = false;
+        canvas.addEventListener('mouseup', () => {
+            isDrawing = false;
         });
 
-        // Event listener for clear button to clear the canvas
-        document.querySelector('.btn-clear').addEventListener('click', function() {
+        // Event listener to clear the canvas
+        document.getElementById('clearCanvas').addEventListener('click', () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "black";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.strokeStyle = "white";
         });
 
-        // Event listener for predict button to submit the drawing for prediction
-        document.querySelector('.btn-predict').addEventListener('click', function() {
-            var dataURL = canvas.toDataURL();
+        // Event listener to predict the drawn digit
+        document.getElementById('predictDraw').addEventListener('click', () => {
+            const dataURL = canvas.toDataURL();
             document.getElementById('canvasData').value = dataURL;
-            document.getElementById('model_choice_canvas').value = document.getElementById('model_choice').value;
             document.getElementById('canvasForm').submit();
         });
-
-        // Function to update file name display
-        function updateFileName(input) {
-            var fileName = input.files[0].name;
-            document.getElementById('file-name-display').textContent = "File selected: " + fileName;
-        }
     </script>
 </body>
 </html>
